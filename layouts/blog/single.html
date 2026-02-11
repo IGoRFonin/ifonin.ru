@@ -5,8 +5,8 @@
   <header class="article-header">
     <h1>{{ .Title }}</h1>
     <div class="article-meta">
-      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
-      · {{ math.Round (div (countwords .Content) 200.0) }} мин. чтения
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02.01.2006" }}</time>
+      · {{ $words := countwords .Content }}{{ $min := math.Round (div (float $words) 200.0) }}{{ if lt $min 1.0 }}1{{ else }}{{ int $min }}{{ end }} мин. чтения
     </div>
   </header>
 

@@ -35,6 +35,13 @@
       "item": "{{ .Permalink }}"
     }
     {{- end }}
+    {{- else if .IsPage }},
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ .Title }}",
+      "item": "{{ .Permalink }}"
+    }
     {{- end }}
   ]
 }
