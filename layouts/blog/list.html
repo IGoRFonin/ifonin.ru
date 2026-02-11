@@ -1,0 +1,13 @@
+{{ define "main" }}
+{{ partial "breadcrumbs.html" . }}
+<h1>{{ .Title }}</h1>
+
+<ul class="post-list">
+  {{ range .Pages.ByDate.Reverse }}
+  <li>
+    <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+  </li>
+  {{ end }}
+</ul>
+{{ end }}
