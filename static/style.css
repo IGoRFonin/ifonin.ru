@@ -1,0 +1,162 @@
+/* === Reset === */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === Base === */
+html {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+body {
+  font-family: monospace;
+  color: #000;
+  background: #fff;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* === Typography === */
+h1 { font-size: 24px; margin-bottom: 0.5rem; }
+h2 { font-size: 18px; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+h3 { font-size: 16px; margin-top: 1.2rem; margin-bottom: 0.4rem; }
+
+p { margin-bottom: 1rem; }
+
+/* === Links === */
+a { color: #0000EE; }
+a:visited { color: #551A8B; }
+a:hover { text-decoration: none; }
+
+/* === Header / Nav === */
+.site-nav {
+  margin-bottom: 2rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+}
+
+/* === Secondary text === */
+.secondary {
+  color: #666;
+}
+
+/* === Blog list === */
+.post-list {
+  list-style: none;
+}
+
+.post-list li {
+  margin-bottom: 0.5rem;
+}
+
+.post-date {
+  color: #666;
+  margin-right: 0.5rem;
+}
+
+/* === Article === */
+.article-header {
+  margin-bottom: 1.5rem;
+}
+
+.article-meta {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.article-content {
+  margin-bottom: 2rem;
+}
+
+.article-content h2 { margin-top: 2rem; }
+.article-content h3 { margin-top: 1.5rem; }
+.article-content p { margin-bottom: 1rem; }
+.article-content ul,
+.article-content ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+.article-content li { margin-bottom: 0.3rem; }
+
+/* === Code === */
+code {
+  font-family: monospace;
+  background: #f8f8f8;
+  border: 1px solid #eee;
+  padding: 0.1rem 0.3rem;
+  font-size: 0.9rem;
+}
+
+pre {
+  background: #f8f8f8;
+  border: 1px solid #eee;
+  padding: 1rem;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+pre code {
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+/* === Breadcrumbs === */
+.breadcrumbs {
+  color: #666;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.breadcrumbs a {
+  color: #666;
+}
+
+/* === Tags === */
+.tags {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tags a {
+  margin-right: 0.5rem;
+}
+
+/* === Prev/Next navigation === */
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+/* === Callout blocks === */
+.callout {
+  border-left: 3px solid #666;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.callout-insight {
+  border-left-color: #2d7d2d;
+}
+
+.callout-warning {
+  border-left-color: #d32f2f;
+}
+
+/* === Footer === */
+.site-footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  color: #666;
+  font-size: 0.9rem;
+}
