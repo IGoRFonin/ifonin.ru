@@ -1,0 +1,28 @@
+baseURL = "https://igorf.tech/"
+languageCode = "ru"
+defaultContentLanguage = "ru"
+title = "igorf.tech"
+
+[taxonomies]
+  tag = "tags"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  description = "Экспертный блог о вайб-кодинге, AI-инструментах и пет-проектах"
+  author = "Igor Fonin"
+  ogImage = "/images/og-default.png"
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+
+[permalinks]
+  blog = "/blog/:slug/"
