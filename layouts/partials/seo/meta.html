@@ -1,0 +1,9 @@
+<title>{{ if .IsHome }}{{ .Site.Title }} — {{ .Site.Params.description }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+{{ $desc := .Description | default .Summary | default .Site.Params.description }}
+<meta name="description" content="{{ $desc | plainify | truncate 160 }}">
+<link rel="canonical" href="{{ .Permalink }}">
+{{- if and (eq .Section "tags") (lt (len .Pages) 3) }}
+<meta name="robots" content="noindex, follow">
+{{- else }}
+<meta name="robots" content="index, follow">
+{{- end }}

@@ -1,0 +1,41 @@
+<nav class="breadcrumbs" aria-label="breadcrumb">
+  <a href="/">igorf.tech</a>
+  {{- if eq .Section "blog" }}
+    → <a href="/blog/">Блог</a>
+    {{- if .IsPage }}
+      → {{ .Title }}
+    {{- end }}
+  {{- else if .IsPage }}
+    → {{ .Title }}
+  {{- end }}
+</nav>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "{{ .Site.BaseURL }}"
+    }
+    {{- if eq .Section "blog" }},
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Блог",
+      "item": "{{ "blog/" | absURL }}"
+    }
+    {{- if .IsPage }},
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ .Title }}",
+      "item": "{{ .Permalink }}"
+    }
+    {{- end }}
+    {{- end }}
+  ]
+}
+</script>
