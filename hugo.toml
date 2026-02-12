@@ -1,7 +1,7 @@
-baseURL = "https://igorf.tech/"
+baseURL = "https://igorf.ru/"
 languageCode = "ru"
 defaultContentLanguage = "ru"
-title = "igorf.tech"
+title = "igorf.ru"
 
 [taxonomies]
   tag = "tags"

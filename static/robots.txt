@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://igorf.tech/sitemap.xml
+Sitemap: https://igorf.ru/sitemap.xml
