@@ -17,19 +17,25 @@
   {{ with .Params.tags }}
   <div class="tags">
     {{ range . }}
-      <a href="{{ "tags/" | absURL }}{{ . | urlize }}/">#{{ . }}</a>
+      <a href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
     {{ end }}
   </div>
   {{ end }}
 
   <nav class="post-nav">
     {{ with .PrevInSection }}
-      <a href="{{ .Permalink }}">← {{ .Title }}</a>
+      <a class="post-nav-item" href="{{ .Permalink }}">
+        <span class="post-nav-label">Назад</span>
+        {{ .Title }}
+      </a>
     {{ else }}
       <span></span>
     {{ end }}
     {{ with .NextInSection }}
-      <a href="{{ .Permalink }}">{{ .Title }} →</a>
+      <a class="post-nav-item post-nav-next" href="{{ .Permalink }}">
+        <span class="post-nav-label">Вперёд</span>
+        {{ .Title }}
+      </a>
     {{ else }}
       <span></span>
     {{ end }}

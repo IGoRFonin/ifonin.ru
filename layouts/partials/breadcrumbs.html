@@ -1,14 +1,4 @@
-<nav class="breadcrumbs" aria-label="breadcrumb">
-  <a href="/">igorf.ru</a>
-  {{- if eq .Section "blog" }}
-    → <a href="/blog/">Блог</a>
-    {{- if .IsPage }}
-      → {{ .Title }}
-    {{- end }}
-  {{- else if .IsPage }}
-    → {{ .Title }}
-  {{- end }}
-</nav>
+{{/* Визуальные хлебные крошки скрыты — навигация через header */}}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

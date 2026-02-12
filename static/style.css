@@ -13,38 +13,51 @@ html {
 
 body {
   font-family: monospace;
-  color: #000;
-  background: #fff;
+  color: #18181B;
+  background: #FAFAFA;
   max-width: 640px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
 
 /* === Typography === */
-h1 { font-size: 24px; margin-bottom: 0.5rem; }
-h2 { font-size: 18px; margin-top: 1.5rem; margin-bottom: 0.5rem; }
-h3 { font-size: 16px; margin-top: 1.2rem; margin-bottom: 0.4rem; }
+h1 {
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-bottom: 2px solid #18181B;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
 
+h2 {
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+h3 { font-size: 16px; margin-top: 1.5rem; margin-bottom: 0.5rem; }
 p { margin-bottom: 1rem; }
 
 /* === Links === */
-a { color: #0000EE; }
-a:visited { color: #551A8B; }
+a { color: #18181B; text-decoration: underline; }
+a:visited { color: #3F3F46; }
 a:hover { text-decoration: none; }
 
 /* === Header / Nav === */
 .site-nav {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.site-nav a {
-  text-decoration: none;
-}
+.site-nav a { text-decoration: none; }
+.site-nav a:hover { text-decoration: underline; }
 
 /* === Secondary text === */
-.secondary {
-  color: #666;
-}
+.secondary { color: #71717A; }
 
 /* === Blog list === */
 .post-list {
@@ -52,50 +65,52 @@ a:hover { text-decoration: none; }
 }
 
 .post-list li {
-  margin-bottom: 0.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #E4E4E7;
+}
+
+.post-list li:first-child {
+  border-top: 1px solid #E4E4E7;
 }
 
 .post-date {
-  color: #666;
+  color: #71717A;
   margin-right: 0.5rem;
 }
 
 /* === Article === */
-.article-header {
-  margin-bottom: 1.5rem;
-}
+.article-header { margin-bottom: 2rem; }
 
 .article-meta {
-  color: #666;
+  color: #71717A;
   margin-bottom: 1rem;
 }
 
-.article-content {
-  margin-bottom: 2rem;
-}
-
-.article-content h2 { margin-top: 2rem; }
-.article-content h3 { margin-top: 1.5rem; }
+.article-content { margin-bottom: 3rem; }
+.article-content h2 { margin-top: 3rem; }
+.article-content h3 { margin-top: 2rem; }
 .article-content p { margin-bottom: 1rem; }
+
 .article-content ul,
 .article-content ol {
   margin-bottom: 1rem;
   padding-left: 1.5rem;
 }
+
 .article-content li { margin-bottom: 0.3rem; }
 
 /* === Code === */
 code {
   font-family: monospace;
-  background: #f8f8f8;
-  border: 1px solid #eee;
+  background: #F4F4F5;
+  border: 1px solid #E4E4E7;
   padding: 0.1rem 0.3rem;
   font-size: 0.9rem;
 }
 
 pre {
-  background: #f8f8f8;
-  border: 1px solid #eee;
+  background: #F4F4F5;
+  border: 1px solid #E4E4E7;
   padding: 1rem;
   overflow-x: auto;
   margin-bottom: 1rem;
@@ -109,54 +124,67 @@ pre code {
 
 /* === Breadcrumbs === */
 .breadcrumbs {
-  color: #666;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
+  color: #71717A;
+  margin-bottom: 1.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.breadcrumbs a {
-  color: #666;
-}
+.breadcrumbs a { color: #71717A; }
 
 /* === Tags === */
 .tags {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .tags a {
-  margin-right: 0.5rem;
+  margin-right: 0.75rem;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
 }
 
 /* === Prev/Next navigation === */
 .post-nav {
   display: flex;
   justify-content: space-between;
-  margin-top: 2rem;
-  padding-top: 1rem;
-  border-top: 1px solid #eee;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #18181B;
 }
+
+.post-nav-item { text-decoration: none; }
+
+.post-nav-label {
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: #71717A;
+  margin-bottom: 0.25rem;
+}
+
+.post-nav-next { text-align: right; }
 
 /* === Callout blocks === */
 .callout {
-  border-left: 3px solid #666;
+  border-left: 3px solid #71717A;
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
 }
 
-.callout-insight {
-  border-left-color: #2d7d2d;
-}
-
-.callout-warning {
-  border-left-color: #d32f2f;
-}
+.callout-insight { border-left-color: #2d7d2d; }
+.callout-warning { border-left-color: #d32f2f; }
 
 /* === Footer === */
 .site-footer {
   margin-top: 3rem;
-  padding-top: 1rem;
-  border-top: 1px solid #eee;
-  color: #666;
-  font-size: 0.9rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #18181B;
+  color: #71717A;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
