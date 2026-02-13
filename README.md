@@ -1,4 +1,4 @@
-# igorf.ru
+# ifonin.ru
 
 Экспертный блог о вайб-кодинге, AI-инструментах и пет-проектах. На русском языке.
 
@@ -31,8 +31,8 @@ snap install hugo
 ### Локальная разработка
 
 ```bash
-git clone git@github.com:<user>/igorf.ru.git
-cd igorf.ru
+git clone git@github.com:<user>/ifonin.ru.git
+cd ifonin.ru
 
 # Запуск dev-сервера с черновиками
 hugo server -D

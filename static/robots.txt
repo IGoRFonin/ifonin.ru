@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://igorf.ru/sitemap.xml
+Sitemap: https://ifonin.ru/sitemap.xml
