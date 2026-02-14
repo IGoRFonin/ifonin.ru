@@ -1,0 +1,56 @@
+[
+  {
+    "slug": "mcp-servery-5-grablei-na-praktike",
+    "title": "MCP-серверы на практике: 5 граблей при разработке и использовании",
+    "date": "2026-02-16",
+    "tags": [
+      "mcp",
+      "claude-code",
+      "ai-tools",
+      "debugging"
+    ]
+  },
+  {
+    "slug": "docker-ufw-port-closed-but-open",
+    "title": "Docker vs UFW: порт закрыт, но доступен всем",
+    "date": "2026-02-15",
+    "tags": [
+      "docker",
+      "linux",
+      "безопасность",
+      "vps",
+      "devops"
+    ]
+  },
+  {
+    "slug": "gde-hostit-v-rossii-2026",
+    "title": "Где хостить в России в 2026: полный гайд после блокировок",
+    "date": "2026-02-14",
+    "tags": [
+      "хостинг",
+      "devops"
+    ]
+  },
+  {
+    "slug": "git-worktrees-hugo-ab-testing",
+    "title": "Три варианта дизайна за 5 минут: git worktrees глазами вайб-кодера",
+    "date": "2026-02-13",
+    "tags": [
+      "vibe-coding",
+      "claude-code",
+      "git",
+      "hugo"
+    ]
+  },
+  {
+    "slug": "prd-first-step-vibe-coding",
+    "title": "Почему PRD — первый шаг вайб-кодинга, а не лишняя бюрократия",
+    "date": "2026-02-12",
+    "tags": [
+      "вайб-кодинг",
+      "prd",
+      "claude-code",
+      "продуктивность"
+    ]
+  }
+]

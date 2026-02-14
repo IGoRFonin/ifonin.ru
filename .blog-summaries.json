@@ -1,0 +1,7 @@
+{
+  "mcp-servery-5-grablei-na-praktike": "Разбирает 5 типичных граблей MCP-серверов: stdout pollution ломает JSON-RPC, axios proxy конфликтует с MCP, REST-мышление не работает для агентов, schema drift между сервером и клиентом, конфигурационные проблемы. Практические решения для каждой проблемы.",
+  "docker-ufw-port-closed-but-open": "Разбирает проблему того, что Docker обходит UFW, создавая собственные iptables-цепочки. Порт закрыт в UFW, но доступен извне через Docker. Три решения: DOCKER-USER chain, daemon.json с iptables:false, docker network internal.",
+  "gde-hostit-v-rossii-2026": "Гайд по хостингу в России после блокировок Vercel, Heroku, Netlify. Сравнение Timeweb, Beget, Selectel. Грантовые программы для стартапов. Пошаговая миграция за час.",
+  "git-worktrees-hugo-ab-testing": "Использование git worktrees для параллельного A/B-тестирования дизайна Hugo-сайта. Один промпт Claude Code создаёт три worktree с Hugo-серверами на разных портах для сравнения вариантов в браузере.",
+  "prd-first-step-vibe-coding": "Объясняет почему PRD нужен до написания кода при вайб-кодинге. Без спецификации AI выбирает среднестатистическое решение. Шаблон PRD из 4 пунктов. Пример с Hugo-блогом ifonin.ru."
+}
