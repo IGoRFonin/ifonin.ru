@@ -1,5 +1,15 @@
 [
   {
+    "slug": "context-engineering-novaya-paradigma",
+    "title": "Context Engineering — новая парадигма",
+    "date": "2026-02-18",
+    "tags": [
+      "context-engineering",
+      "claude-code",
+      "ai-engineering"
+    ]
+  },
+  {
     "slug": "ot-vayb-kodinga-k-agentnomu-inzhiniringu",
     "title": "Brainstorm → Plan → Execute: от вайб-кодинга к агентному инжинирингу",
     "date": "2026-02-17",

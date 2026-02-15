@@ -1,0 +1,12 @@
+{
+  "series": [
+    {
+      "slug": "context-engineering",
+      "title": "Оптимизация контекста в Claude Code",
+      "created": "2026-02-15",
+      "total": 12,
+      "published": 1,
+      "active": true
+    }
+  ]
+}

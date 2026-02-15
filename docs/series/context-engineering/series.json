@@ -1,0 +1,249 @@
+{
+  "slug": "context-engineering",
+  "title": "Оптимизация контекста в Claude Code",
+  "created": "2026-02-15",
+  "glossary": {
+    "context engineering": "проектирование контекста — управление всеми токенами, которые модель видит при генерации",
+    "compaction": "трёхслойная система сжатия контекста в Claude Code (micro, auto, manual)",
+    "context window": "окно контекста — максимальный объём токенов, доступный модели (200K Sonnet, до 1M Opus)",
+    "context buffer": "зарезервированный буфер ~45K токенов для генерации ответа и thinking",
+    "CLAUDE.md": "файл персистентной памяти проекта, загружается в каждую сессию",
+    "skills": "on-demand context injection — инструкции, загружаемые только по требованию",
+    "MCP": "Model Context Protocol — протокол подключения внешних инструментов",
+    "tool search": "lazy loading для MCP: загрузка определений инструментов по запросу вместо всех сразу",
+    "subagent": "изолированный экземпляр Claude Code с собственным контекстным окном",
+    "hooks": "shell-команды, исполняемые автоматически на lifecycle events Claude Code",
+    "worktree": "git worktree — отдельная рабочая директория с общим .git для параллельной работы",
+    "prompt caching": "кеширование неизменяемых префиксов промпта между API-вызовами (до 90% экономии)",
+    "adaptive thinking": "динамическое масштабирование глубины рассуждений по сложности задачи",
+    "rehydration": "восстановление рабочего состояния после compaction",
+    "token tax": "скрытое потребление контекста подключёнными MCP-серверами"
+  },
+  "publication_order": [
+    1,
+    2,
+    12,
+    4,
+    7,
+    5,
+    3,
+    6,
+    10,
+    8,
+    9,
+    11
+  ],
+  "articles": [
+    {
+      "number": 1,
+      "slug": "context-engineering-novaya-paradigma",
+      "title": "Context Engineering — новая парадигма",
+      "complexity": "вводная",
+      "status": "published",
+      "date": "2026-02-18",
+      "summary": "Статья описывает context engineering как новую парадигму в AI инженерии, которая заменяет традиционный prompt engineering на системное управление всем контекстом модели. Представлены четыре детерминистических паттерна (CLAUDE.md, Skills, Subagents, Hooks) и Six Pillars Framework для оптимизации использования токенов.",
+      "key_terms": [
+        "context engineering",
+        "CLAUDE.md",
+        "Skills",
+        "Subagents",
+        "token budgeting"
+      ],
+      "links_to": [],
+      "links_from": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "number": 2,
+      "slug": null,
+      "title": "Как устроен контекст внутри",
+      "complexity": "техническая",
+      "status": "research_done",
+      "date": null,
+      "summary": null,
+      "key_terms": [],
+      "links_to": [],
+      "links_from": [
+        3,
+        5,
+        11
+      ]
+    },
+    {
+      "number": 3,
+      "slug": null,
+      "title": "Compaction — трёхслойная система сжатия",
+      "complexity": "техническая",
+      "status": "research_done",
+      "date": null,
+      "summary": null,
+      "key_terms": [],
+      "links_to": [
+        1,
+        2,
+        8
+      ],
+      "links_from": [
+        8
+      ]
+    },
+    {
+      "number": 4,
+      "slug": null,
+      "title": "CLAUDE.md — персистентная память проекта",
+      "complexity": "практическая",
+      "status": "research_done",
+      "date": null,
+      "summary": null,
+      "key_terms": [],
+      "links_to": [
+        1,
+        7
+      ],
+      "links_from": [
+        7
+      ]
+    },
+    {
+      "number": 5,
+      "slug": null,
+      "title": "MCP и скрытый \"токен-налог\" серверов",
+      "complexity": "техническая",
+      "status": "research_done",
+      "date": null,
+      "summary": null,
+      "key_terms": [],
+      "links_to": [
+        1,
+        2,
+        7
+      ],
+      "links_from": [
+        7
+      ]
+    },
+    {
+      "number": 6,
+      "slug": null,
+      "title": "Субагенты — изолированные контекстные окна",
+      "complexity": "практическая",
+      "status": "research_done",
+      "date": null,
+      "summary": null,
+      "key_terms": [],
+      "links_to": [
+        1,
+        10
+      ],
+      "links_from": [
+        10
+      ]
+    },
+    {
+      "number": 7,
+      "slug": null,
+      "title": "Skills — контекст по требованию",
+      "complexity": "практическая",
+      "status": "research_done",
+      "date": null,
+      "summary": null,
+      "key_terms": [],
+      "links_to": [
+        1,
+        4,
+        5
+      ],
+      "links_from": [
+        4,
+        5
+      ]
+    },
+    {
+      "number": 8,
+      "slug": null,
+      "title": "Hooks — детерминистический контроль",
+      "complexity": "продвинутая",
+      "status": "research_done",
+      "date": null,
+      "summary": null,
+      "key_terms": [],
+      "links_to": [
+        1,
+        3
+      ],
+      "links_from": [
+        3
+      ]
+    },
+    {
+      "number": 9,
+      "slug": null,
+      "title": "Persistent Memory — память между сессиями",
+      "complexity": "практическая",
+      "status": "research_done",
+      "date": null,
+      "summary": null,
+      "key_terms": [],
+      "links_to": [
+        1
+      ],
+      "links_from": []
+    },
+    {
+      "number": 10,
+      "slug": null,
+      "title": "Git Worktrees — физическая изоляция агентов",
+      "complexity": "практическая",
+      "status": "research_done",
+      "date": null,
+      "summary": null,
+      "key_terms": [],
+      "links_to": [
+        1,
+        6
+      ],
+      "links_from": [
+        6
+      ]
+    },
+    {
+      "number": 11,
+      "slug": null,
+      "title": "Prompt Caching и Adaptive Thinking",
+      "complexity": "техническая",
+      "status": "research_done",
+      "date": null,
+      "summary": null,
+      "key_terms": [],
+      "links_to": [
+        1,
+        2
+      ],
+      "links_from": []
+    },
+    {
+      "number": 12,
+      "slug": null,
+      "title": "Практические рецепты и workflow",
+      "complexity": "сводная",
+      "status": "research_done",
+      "date": null,
+      "summary": null,
+      "key_terms": [],
+      "links_to": [
+        1
+      ],
+      "links_from": []
+    }
+  ]
+}
