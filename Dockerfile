@@ -3,6 +3,6 @@ WORKDIR /src
 COPY . .
 RUN hugo --minify
 
-FROM nginx:alpine
+FROM nginx:1.27-alpine
 COPY --from=builder /src/public /usr/share/nginx/html
 EXPOSE 80
