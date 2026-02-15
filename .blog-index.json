@@ -1,5 +1,17 @@
 [
   {
+    "slug": "kak-ustroen-kontekst-vnutri",
+    "title": "Как устроен контекст внутри: От 200K токенов к реальным 120K",
+    "date": "2026-02-19",
+    "tags": [
+      "claude-code",
+      "context-window",
+      "context-engineering",
+      "compaction",
+      "tokens"
+    ]
+  },
+  {
     "slug": "context-engineering-novaya-paradigma",
     "title": "Context Engineering — новая парадигма",
     "date": "2026-02-18",

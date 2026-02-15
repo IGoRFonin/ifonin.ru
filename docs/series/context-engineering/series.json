@@ -65,13 +65,19 @@
     },
     {
       "number": 2,
-      "slug": null,
+      "slug": "kak-ustroen-kontekst-vnutri",
       "title": "Как устроен контекст внутри",
       "complexity": "техническая",
-      "status": "research_done",
-      "date": null,
-      "summary": null,
-      "key_terms": [],
+      "status": "published",
+      "date": "2026-02-19",
+      "summary": "Статья разбирает архитектуру контекстного окна Claude Code, выявляя реальное расхождение между объявленными 200K и доступными 120K токенами, включая невидимые резервы, слои системы и механизмы автоматического сжатия контекста. Описывается четырёхслойная структура окна (system context, project memory, conversation, MCP tools), точки деградации качества при заполнении контекста и практические методы мониторинга через команды /context и /doctor.",
+      "key_terms": [
+        "контекстное окно",
+        "auto-compact",
+        "MCP token tax",
+        "rehydration",
+        "context engineering"
+      ],
       "links_to": [],
       "links_from": [
         3,
