@@ -17,7 +17,8 @@
     "prompt caching": "кеширование неизменяемых префиксов промпта между API-вызовами (до 90% экономии)",
     "adaptive thinking": "динамическое масштабирование глубины рассуждений по сложности задачи",
     "rehydration": "восстановление рабочего состояния после compaction",
-    "token tax": "скрытое потребление контекста подключёнными MCP-серверами"
+    "token tax": "скрытое потребление контекста подключёнными MCP-серверами",
+    "Compaction Contract": "обязательная структура summary при auto-compaction: текущая цель, архитектурные решения, проблемы, изменённые файлы, следующие шаги, recovery info"
   },
   "publication_order": [
     1,
@@ -87,13 +88,19 @@
     },
     {
       "number": 3,
-      "slug": null,
+      "slug": "compaction-tryokhsloynaya-sistema-szhati",
       "title": "Compaction — трёхслойная система сжатия",
       "complexity": "техническая",
-      "status": "research_done",
-      "date": null,
-      "summary": null,
-      "key_terms": [],
+      "status": "published",
+      "date": "2026-02-20",
+      "summary": "Статья описывает трёхслойную систему сжатия контекста (compaction) в Claude Code, которая позволяет продолжительную работу без потери информации и понимания. Система включает микрокомпакцию (автоматическое удаление больших tool outputs на ранних стадиях), auto-compaction (создание reconstruction-grade summary при критическом заполнении контекста) и manual /compact команду (проактивный контроль с focus instructions). Ключевой механизм — Compaction Contract с обязательной структурой summary и rehydration sequence, восстанавливающая рабочее состояние через перечитывание файлов, восстановление task list и вставку continuation instruction.",
+      "key_terms": [
+        "Compaction Contract",
+        "Context Engineering",
+        "Rehydration",
+        "Microcompaction",
+        "Auto-compaction"
+      ],
       "links_to": [
         1,
         2,

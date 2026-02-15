@@ -1,5 +1,16 @@
 [
   {
+    "slug": "compaction-tryokhsloynaya-sistema-szhati",
+    "title": "Compaction — трёхслойная система сжатия контекста в Claude Code",
+    "date": "2026-02-20",
+    "tags": [
+      "claude-code",
+      "context-engineering",
+      "compaction",
+      "ai-tools"
+    ]
+  },
+  {
     "slug": "kak-ustroen-kontekst-vnutri",
     "title": "Как устроен контекст внутри: От 200K токенов к реальным 120K",
     "date": "2026-02-19",
