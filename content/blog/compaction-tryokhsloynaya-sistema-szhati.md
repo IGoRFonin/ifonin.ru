@@ -8,8 +8,6 @@ slug: "compaction-tryokhsloynaya-sistema-szhati"
 draft: false
 ---
 
-# Compaction - трёхслойная система сжатия контекста в Claude Code
-
 **Статья #3 в серии "Оптимизация контекста в Claude Code"**
 
 ---
