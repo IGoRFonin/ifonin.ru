@@ -8,8 +8,6 @@ slug: "claudemd-persistentnaya-pamyat-proekta"
 draft: false
 ---
 
-# CLAUDE.md - персистентная память проекта
-
 **Статья #4 в серии «Оптимизация контекста в Claude Code»**
 
 ---
