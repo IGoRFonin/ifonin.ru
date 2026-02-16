@@ -1,5 +1,16 @@
 [
   {
+    "slug": "audit-claude-md-kontekst-proekta",
+    "title": "Когда контекст проекта становится бременем: как я сделал команду /audit-claude-md",
+    "date": "2026-02-23",
+    "tags": [
+      "claude-code",
+      "ai",
+      "productivity",
+      "tools"
+    ]
+  },
+  {
     "slug": "ai-slop-v-interfejsah-i-kak-s-nim-borot",
     "title": "Почему все AI-интерфейсы выглядят одинаково (и как это исправить через скиллы)",
     "date": "2026-02-22",
