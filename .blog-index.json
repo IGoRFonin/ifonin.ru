@@ -1,5 +1,16 @@
 [
   {
+    "slug": "claudemd-persistentnaya-pamyat-proekta",
+    "title": "CLAUDE.md - персистентная память проекта",
+    "date": "2026-02-21",
+    "tags": [
+      "claude-code",
+      "context-engineering",
+      "optimization",
+      "best-practices"
+    ]
+  },
+  {
     "slug": "compaction-tryokhsloynaya-sistema-szhati",
     "title": "Compaction — трёхслойная система сжатия контекста в Claude Code",
     "date": "2026-02-20",
