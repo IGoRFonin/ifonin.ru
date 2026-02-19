@@ -1,5 +1,16 @@
 [
   {
+    "slug": "exa-mcp-vs-webfetch-claude-code",
+    "title": "Зачем я установил Exa MCP в Claude Code и больше не использую WebFetch",
+    "date": "2026-02-24",
+    "tags": [
+      "claude-code",
+      "mcp",
+      "exa",
+      "tools"
+    ]
+  },
+  {
     "slug": "audit-claude-md-kontekst-proekta",
     "title": "Когда контекст проекта становится бременем: как я сделал команду /audit-claude-md",
     "date": "2026-02-23",
