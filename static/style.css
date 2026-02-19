@@ -99,6 +99,29 @@ a:hover { text-decoration: none; }
 
 .article-content li { margin-bottom: 0.3rem; }
 
+/* === Tables === */
+.article-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.article-content th,
+.article-content td {
+  border: 1px solid #E4E4E7;
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+}
+
+.article-content th {
+  background: #F4F4F5;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+}
+
 /* === Code === */
 code {
   font-family: monospace;
