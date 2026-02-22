@@ -1,5 +1,16 @@
 [
   {
+    "slug": "seo-minimalnyy-blog-bez-js",
+    "title": "Почему я создал блог на 213 строк CSS и как это помогает SEO",
+    "date": "2026-02-27",
+    "tags": [
+      "seo",
+      "блог",
+      "css",
+      "производительность"
+    ]
+  },
+  {
     "slug": "claude-code-logs-content-mining",
     "title": "Я научил Claude Code читать собственные логи и предлагать темы для постов",
     "date": "2026-02-26",
