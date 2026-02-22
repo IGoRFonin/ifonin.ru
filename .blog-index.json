@@ -1,5 +1,17 @@
 [
   {
+    "slug": "disciplina-vmesto-opyta-superpowers-subagent-development",
+    "title": "Дисциплина вместо опыта: как Superpowers позволяет непрограммистам писать production-код",
+    "date": "2026-03-01",
+    "tags": [
+      "claude-code",
+      "superpowers",
+      "vibe-coding",
+      "subagent-driven-development",
+      "ai-tools"
+    ]
+  },
+  {
     "slug": "playwright-defi-telegram-bot",
     "title": "Бот на Playwright, который присылает в Telegram топ доходностей в DeFi",
     "date": "2026-02-28",
