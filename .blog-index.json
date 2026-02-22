@@ -1,5 +1,17 @@
 [
   {
+    "slug": "playwright-defi-telegram-bot",
+    "title": "Бот на Playwright, который присылает в Telegram топ доходностей в DeFi",
+    "date": "2026-02-28",
+    "tags": [
+      "playwright",
+      "telegram",
+      "defi",
+      "bots",
+      "automation"
+    ]
+  },
+  {
     "slug": "seo-minimalnyy-blog-bez-js",
     "title": "Почему я создал блог на 213 строк CSS и как это помогает SEO",
     "date": "2026-02-27",
