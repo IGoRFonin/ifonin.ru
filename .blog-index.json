@@ -1,5 +1,17 @@
 [
   {
+    "slug": "fedcm-migration-aborterror-debugging-claude-code",
+    "title": "FedCM миграция: AbortError, два элемента и 23 промпта с Claude Code",
+    "date": "2026-03-03",
+    "tags": [
+      "google-auth",
+      "fedcm",
+      "debugging",
+      "claude-code",
+      "react"
+    ]
+  },
+  {
     "slug": "playwright-automation-incremental-prompting",
     "title": "От 10 строк к полной E2E-автоматизации: как вайб-кодинг работает на практике",
     "date": "2026-03-02",
