@@ -1,5 +1,16 @@
 [
   {
+    "slug": "playwright-automation-incremental-prompting",
+    "title": "От 10 строк к полной E2E-автоматизации: как вайб-кодинг работает на практике",
+    "date": "2026-03-02",
+    "tags": [
+      "vibe-coding",
+      "playwright",
+      "claude-code",
+      "automation"
+    ]
+  },
+  {
     "slug": "disciplina-vmesto-opyta-superpowers-subagent-development",
     "title": "Дисциплина вместо опыта: как Superpowers позволяет непрограммистам писать production-код",
     "date": "2026-03-01",
