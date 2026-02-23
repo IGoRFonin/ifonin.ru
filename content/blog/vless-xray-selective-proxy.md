@@ -30,17 +30,12 @@ draft: false
 
 ### Шаг 1: Приобретение подписки VLESS
 
-Нужен доступ к VLESS-серверам. Его предоставляют специализированные сервисы - обычно за $5-10 в месяц.
-
-Рабочие варианты:
-- [fizzvpn.io](https://fizzvpn.io)
-- [prosto_kosmos_vpn_bot](https://t.me/prosto_kosmos_vpn_bot) (Telegram-бот, актуальность условий лучше проверить перед оплатой)
-- Любой другой сервис, предоставляющий подписку в формате VLESS.
+Нужен доступ к VLESS-серверам. Его предоставляют специализированные сервисы в виде платной подписки. Найти их несложно - погуглите "VLESS подписка" или поищите в Telegram.
 
 После оплаты получите уникальную ссылку-подписку со всеми конфигурациями серверов. Выглядит примерно так:
 
 ```
-https://real.net-problemi.ru:7443/sub/dXNfMTAzMzM4LDE3NTTA4NDg-YCqpuP1xt#ProstoKosmos
+https://example.com/sub/your-unique-token#ServiceName
 ```
 
 Это ваш главный ключ. Храните в безопасности.
@@ -73,10 +68,10 @@ bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release
 npx vless-to-xray [ВАША_ССЫЛКА_ПОДПИСКИ] ./xray-config.json
 ```
 
-Пример с ссылкой из Шага 1:
+Пример:
 
 ```shell
-npx vless-to-xray https://real.net-problemi.ru:7443/sub/dXNfMTAzMzM4LDE3NTTA4NDg-YCqpuP1xt#ProstoKosmos ./xray-config.json
+npx vless-to-xray https://example.com/sub/your-unique-token#ServiceName ./xray-config.json
 ```
 
 `npx` выполнит пакет `vless-to-xray` без глобальной установки. В терминале появится список доступных прокси-серверов, а в текущей папке создастся файл `xray-config.json`.
