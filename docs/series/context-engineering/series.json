@@ -137,13 +137,19 @@
     },
     {
       "number": 5,
-      "slug": null,
+      "slug": "mcp-skrytyy-token-nalog-serverov",
       "title": "MCP и скрытый \"токен-налог\" серверов",
       "complexity": "техническая",
-      "status": "research_done",
-      "date": null,
-      "summary": null,
-      "key_terms": [],
+      "status": "published",
+      "date": "2026-03-04",
+      "summary": "В статье разбирается проблема скрытого налога на токены при использовании MCP-серверов, которые потребляют до 50-70% контекстного окна при инициализации сессии. Решением стал механизм Tool Search (январь 2026), реализующий ленивую загрузку инструментов и снижающий потребление на 80-95%, хотя выбор между MCP и Skills остаётся вопросом осознанного context engineering.",
+      "key_terms": [
+        "MCP",
+        "token tax",
+        "Tool Search",
+        "lazy loading",
+        "context engineering"
+      ],
       "links_to": [
         1,
         2,
