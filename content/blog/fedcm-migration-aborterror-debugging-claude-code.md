@@ -8,13 +8,6 @@ slug: "fedcm-migration-aborterror-debugging-claude-code"
 draft: false
 ---
 
----
-title: "FedCM миграция: AbortError, два элемента и 23 промпта с Claude Code"
-slug: fedcm-migration-aborterror-debugging-claude-code
-date: 2026-02-23
-tags: [google-auth, fedcm, debugging, claude-code, react]
----
-
 Авторизация через Google One Tap перестала работать в incognito. Ошибка выглядела как баг FedCM, а оказалась - два google-auth элемента на одной странице.
 
 ## Что произошло
