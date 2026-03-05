@@ -1,5 +1,17 @@
 [
   {
+    "slug": "600-testov-enzyme-na-rtl-ai-konveyer",
+    "title": "600 тестов с Enzyme на RTL: как я построил AI-конвейер и не сошёл с ума",
+    "date": "2026-03-10",
+    "tags": [
+      "claude-code",
+      "testing",
+      "react",
+      "миграция",
+      "ai-автоматизация"
+    ]
+  },
+  {
     "slug": "claude-code-hooks-auto-typecheck-lint",
     "title": "Claude Code хуки: как заставить AI-агента не ломать типы и линтер",
     "date": "2026-03-09",
