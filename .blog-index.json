@@ -1,5 +1,15 @@
 [
   {
+    "slug": "5-podvodnykh-kamney-subagentov-claude-code",
+    "title": "5 подводных камней субагентов Claude Code, о которых не пишут в документации",
+    "date": "2026-03-07",
+    "tags": [
+      "claude-code",
+      "subagents",
+      "vibe-coding"
+    ]
+  },
+  {
     "slug": "57-promptov-do-mvp-vayb-koding-multipleer",
     "title": "57 промптов до MVP: как вайб-кодить мультиплеерную игру с WebSocket",
     "date": "2026-03-06",
