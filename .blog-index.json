@@ -1,5 +1,16 @@
 [
   {
+    "slug": "claude-code-hooks-auto-typecheck-lint",
+    "title": "Claude Code хуки: как заставить AI-агента не ломать типы и линтер",
+    "date": "2026-03-09",
+    "tags": [
+      "claude-code",
+      "ai-tools",
+      "typescript",
+      "developer-experience"
+    ]
+  },
+  {
     "slug": "ai-agent-sast-report-triage-fix",
     "title": "11 уязвимостей, 1 реальная: как AI-агент разобрал SAST-отчёт за меня",
     "date": "2026-03-08",
