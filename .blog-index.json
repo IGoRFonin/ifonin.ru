@@ -1,5 +1,16 @@
 [
   {
+    "slug": "ai-agent-sast-report-triage-fix",
+    "title": "11 уязвимостей, 1 реальная: как AI-агент разобрал SAST-отчёт за меня",
+    "date": "2026-03-08",
+    "tags": [
+      "claude-code",
+      "security",
+      "sast",
+      "ai-tools"
+    ]
+  },
+  {
     "slug": "5-podvodnykh-kamney-subagentov-claude-code",
     "title": "5 подводных камней субагентов Claude Code, о которых не пишут в документации",
     "date": "2026-03-07",
