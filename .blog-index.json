@@ -1,5 +1,15 @@
 [
   {
+    "slug": "x-authorization-pattern",
+    "title": "X-Authorization. Когда Authorization заголовок уже занят",
+    "date": "2026-03-11",
+    "tags": [
+      "вайб-кодинг",
+      "nodejs",
+      "авторизация"
+    ]
+  },
+  {
     "slug": "600-testov-enzyme-na-rtl-ai-konveyer",
     "title": "600 тестов с Enzyme на RTL: как я построил AI-конвейер и не сошёл с ума",
     "date": "2026-03-10",
