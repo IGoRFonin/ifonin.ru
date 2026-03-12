@@ -1,5 +1,16 @@
 [
   {
+    "slug": "komfortnoe-kod-revyu-worktree-rspack-biome",
+    "title": "Как я сделал код-ревью комфортным: worktree, rspack и biome",
+    "date": "2026-03-12",
+    "tags": [
+      "devtools",
+      "code-review",
+      "git",
+      "frontend"
+    ]
+  },
+  {
     "slug": "x-authorization-pattern",
     "title": "X-Authorization. Когда Authorization заголовок уже занят",
     "date": "2026-03-11",
