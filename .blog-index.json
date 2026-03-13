@@ -1,5 +1,28 @@
 [
   {
+    "slug": "nodejs-rust-claude-code",
+    "title": "Когда AI позволяет выбирать язык, который ты не знаешь: моя история с Rust",
+    "date": "2026-03-14",
+    "tags": [
+      "rust",
+      "nodejs",
+      "claude-code",
+      "ai",
+      "вайб-кодинг"
+    ]
+  },
+  {
+    "slug": "subagent-driven-vs-parallel-sessions",
+    "title": "Два паттерна AI-кодирования: когда запускать subagent, когда параллельные сессии",
+    "date": "2026-03-13",
+    "tags": [
+      "ai-coding",
+      "claude-code",
+      "architecture",
+      "vibe-coding"
+    ]
+  },
+  {
     "slug": "komfortnoe-kod-revyu-worktree-rspack-biome",
     "title": "Как я сделал код-ревью комфортным: worktree, rspack и biome",
     "date": "2026-03-12",
