@@ -161,13 +161,19 @@
     },
     {
       "number": 6,
-      "slug": null,
+      "slug": "subagenty-izolirovannye-kontekstnye-okna",
       "title": "Субагенты — изолированные контекстные окна",
       "complexity": "практическая",
-      "status": "research_done",
-      "date": null,
-      "summary": null,
-      "key_terms": [],
+      "status": "published",
+      "date": "2026-03-18",
+      "summary": "Статья объясняет концепцию субагентов как изолированных экземпляров Claude Code с собственным контекстным окном, которые решают проблему засорения основного контекста промежуточными артефактами поиска. Описаны четыре типа встроенных субагентов, три архитектурных паттерна использования (параллельные, последовательные задачи и фоновые работы), а также практические примеры их применения.",
+      "key_terms": [
+        "subagent",
+        "context window isolation",
+        "parallel patterns",
+        "context engineering",
+        "Explore-Plan-Implement chain"
+      ],
       "links_to": [
         1,
         10
