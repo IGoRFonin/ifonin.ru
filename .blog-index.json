@@ -1,5 +1,17 @@
 [
   {
+    "slug": "mcp-web3-ai-agent-blockchain",
+    "title": "MCP + Web3: как AI-агент исследует блокчейн-протоколы",
+    "date": "2026-03-16",
+    "tags": [
+      "mcp",
+      "web3",
+      "defi",
+      "ai-agents",
+      "blockchain"
+    ]
+  },
+  {
     "slug": "nodejs-rust-claude-code",
     "title": "Когда AI позволяет выбирать язык, который ты не знаешь: моя история с Rust",
     "date": "2026-03-14",
