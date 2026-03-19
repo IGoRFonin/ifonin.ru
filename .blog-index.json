@@ -1,5 +1,16 @@
 [
   {
+    "slug": "62-prompta-proxy-dashboard-vibe-koding",
+    "title": "От идеи к 50+ тестам прокси за 62 промпта: как работает вайб-кодинг в реальности",
+    "date": "2026-03-21",
+    "tags": [
+      "vibe-coding",
+      "pet-project",
+      "claude-code",
+      "react"
+    ]
+  },
+  {
     "slug": "fork-bez-boli-patch-sync",
     "title": "Fork без боли: Как синхронизировать свои патчи с upstream и автоматически релизить",
     "date": "2026-03-20",
