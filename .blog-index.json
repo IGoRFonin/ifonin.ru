@@ -1,5 +1,17 @@
 [
   {
+    "slug": "fork-bez-boli-patch-sync",
+    "title": "Fork без боли: Как синхронизировать свои патчи с upstream и автоматически релизить",
+    "date": "2026-03-20",
+    "tags": [
+      "vibe-coding",
+      "git",
+      "github-actions",
+      "claude-code",
+      "devops"
+    ]
+  },
+  {
     "slug": "defi-looping-221-prompts-ai-agent",
     "title": "DeFi Looping: как за 221 промпт AI-ассистент помог выстроить от формул до production-инструмента",
     "date": "2026-03-19",
