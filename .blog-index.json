@@ -1,5 +1,16 @@
 [
   {
+    "slug": "web-audio-react-vizualizacija",
+    "title": "Как AI помог браузеру услышать музыку: Web Audio API + React в семейной викторине",
+    "date": "2026-03-26",
+    "tags": [
+      "vibe-coding",
+      "web-audio-api",
+      "react",
+      "visualization"
+    ]
+  },
+  {
     "slug": "claude-code-youtube-designer",
     "title": "Claude Code как дизайнер: как я делал YouTube-превью через HTML",
     "date": "2026-03-25",
