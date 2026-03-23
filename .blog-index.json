@@ -1,5 +1,17 @@
 [
   {
+    "slug": "coolify-self-hosted-paas",
+    "title": "Coolify вместо Vercel: как задеплоить пет-проект на собственном VPS за 10 минут",
+    "date": "2026-03-24",
+    "tags": [
+      "coolify",
+      "docker",
+      "devops",
+      "self-hosted",
+      "deploy"
+    ]
+  },
+  {
     "slug": "telegram-bot-proxy-bun-grammy",
     "title": "Как AI-инструмент нашёл прокси для Telegram бота в зависимостях",
     "date": "2026-03-23",
