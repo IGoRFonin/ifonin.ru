@@ -1,5 +1,16 @@
 [
   {
+    "slug": "telegram-bot-proxy-bun-grammy",
+    "title": "Как AI-инструмент нашёл прокси для Telegram бота в зависимостях",
+    "date": "2026-03-23",
+    "tags": [
+      "claude-code",
+      "telegram",
+      "bun",
+      "вайб-кодинг"
+    ]
+  },
+  {
     "slug": "habr-ai-vpn-hacks",
     "title": "Хабр обманул 144 тыс читателей про VPN - вот что реально работает",
     "date": "2026-03-22",
