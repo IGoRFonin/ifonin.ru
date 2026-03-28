@@ -3,7 +3,7 @@ title: "Не пиши контекст - пусть агент найдёт ег
 date: 2026-03-17
 lastmod: 2026-03-17
 description: "Как explore-субагенты находят паттерны и конвенции в кодовой базе ДО планирования, делая планы специфичными к проекту"
-tags: ["claude-code", "ai-агенты", "context-engineering", "vibe-coding"]
+tags: ["claude-code", "ai-agents", "context-engineering", "vibe-coding"]
 slug: "agent-context-discovery"
 draft: false
 ---

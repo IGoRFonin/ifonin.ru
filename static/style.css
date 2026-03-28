@@ -169,6 +169,31 @@ pre code {
   letter-spacing: 0.1em;
 }
 
+/* === Related posts === */
+.related-posts {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #E4E4E7;
+}
+
+.related-posts h2 {
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.related-posts ul {
+  list-style: none;
+}
+
+.related-posts li {
+  padding: 0.3rem 0;
+}
+
+.related-posts a {
+  font-size: 0.9rem;
+}
+
 /* === Prev/Next navigation === */
 .post-nav {
   display: flex;

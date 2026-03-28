@@ -3,7 +3,7 @@ title: "X-Authorization. Когда Authorization заголовок уже за
 date: 2026-03-11
 lastmod: 2026-03-11
 description: "Паттерн X-Authorization для решения конфликта Basic Auth и JWT в одном заголовке. Passport.js кастомный экстрактор, Nginx конфигурация, и как AI помог решить проблему за 5 промптов."
-tags: ["вайб-кодинг", "nodejs", "авторизация"]
+tags: ["vibe-coding", "nodejs", "authorization"]
 slug: "x-authorization-pattern"
 draft: false
 ---

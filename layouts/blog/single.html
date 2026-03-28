@@ -22,6 +22,18 @@
   </div>
   {{ end }}
 
+  {{ $related := .Site.RegularPages.Related . | first 5 }}
+  {{ with $related }}
+  <aside class="related-posts">
+    <h2>Читайте также</h2>
+    <ul>
+      {{ range . }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  </aside>
+  {{ end }}
+
   <nav class="post-nav">
     {{ with .PrevInSection }}
       <a class="post-nav-item" href="{{ .Permalink }}">

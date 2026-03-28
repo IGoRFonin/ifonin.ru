@@ -3,7 +3,7 @@ title: "Когда AI позволяет выбирать язык, которы
 date: 2026-03-14
 lastmod: 2026-03-14
 description: "Как я переписал два Node.js скрипта на Rust с помощью Claude Code без знания Rust и получил 5-10x ускорение"
-tags: ["rust", "nodejs", "claude-code", "ai", "вайб-кодинг"]
+tags: ["rust", "nodejs", "claude-code", "ai", "vibe-coding"]
 slug: "nodejs-rust-claude-code"
 draft: false
 ---

@@ -15,5 +15,8 @@
   </li>
   {{ end }}
 </ul>
+{{ if gt (len $posts) 10 }}
+<p><a href="/blog/">Все статьи →</a></p>
+{{ end }}
 {{ end }}
 {{ end }}

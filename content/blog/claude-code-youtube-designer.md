@@ -3,7 +3,7 @@ title: "Claude Code как дизайнер: как я делал YouTube-пре
 date: 2026-03-25
 lastmod: 2026-03-25
 description: "19 промптов, 4 HTML-дизайна для визуализации прокси-конфигураций. Как Claude Code с кастомным системным промптом заменил Figma для простых визуалов."
-tags: ["claude-code", "дизайн", "youtube", "html", "вайб-кодинг"]
+tags: ["claude-code", "design", "youtube", "html", "vibe-coding"]
 slug: "claude-code-youtube-designer"
 draft: false
 ---

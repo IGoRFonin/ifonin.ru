@@ -2,10 +2,16 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Игорь Фонин",
+  "@type": "WebSite",
+  "name": "{{ .Site.Title }}",
   "url": "{{ .Site.BaseURL }}",
-  "description": "{{ .Site.Params.description }}"
+  "description": "{{ .Site.Params.description }}",
+  "inLanguage": "ru",
+  "author": {
+    "@type": "Person",
+    "name": "Игорь Фонин",
+    "url": "{{ .Site.BaseURL }}"
+  }
 }
 </script>
 {{ end }}

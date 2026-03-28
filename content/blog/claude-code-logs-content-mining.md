@@ -3,7 +3,7 @@ title: "Я научил Claude Code читать собственные логи
 date: 2026-02-26
 lastmod: 2026-02-26
 description: "Как скилл blog-ideas-research парсит логи сессий, фильтрует шум и предлагает темы для блога - с рекурсией и human gate"
-tags: ["claude-code", "автоматизация", "контент", "скиллы"]
+tags: ["claude-code", "automation", "content", "skills"]
 slug: "claude-code-logs-content-mining"
 draft: false
 ---

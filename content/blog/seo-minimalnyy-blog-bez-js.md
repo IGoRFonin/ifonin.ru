@@ -3,7 +3,7 @@ title: "Почему я создал блог на 213 строк CSS и как 
 date: 2026-02-27
 lastmod: 2026-02-27
 description: "Как минимальный HTML/CSS без JavaScript улучшает ранжирование в Google. Практический кейс блога ifonin.ru: 5KB homepage, Core Web Vitals, видимость для AI-поиска."
-tags: ["seo", "блог", "css", "производительность"]
+tags: ["seo", "blog", "css", "performance"]
 slug: "seo-minimalnyy-blog-bez-js"
 draft: false
 ---

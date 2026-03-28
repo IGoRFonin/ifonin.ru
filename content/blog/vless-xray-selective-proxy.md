@@ -3,7 +3,7 @@ title: "Продвинутая настройка VPN на дому: VLESS + Xra
 date: 2026-03-05
 lastmod: 2026-03-05
 description: "Пошаговая инструкция по настройке VLESS + Xray для выборочного проксирования трафика через браузерное расширение"
-tags: ["vpn", "xray", "vless", "proxy", "инструкция"]
+tags: ["vpn", "xray", "vless", "proxy", "guide"]
 slug: "vless-xray-selective-proxy"
 draft: false
 ---

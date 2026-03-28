@@ -3,7 +3,7 @@ title: "Docker vs UFW: порт закрыт, но доступен всем"
 date: 2026-02-15
 lastmod: 2026-02-15
 description: "Docker обходит UFW и открывает порты мимо файрвола. Почему так происходит и три способа это исправить."
-tags: ["docker", "linux", "безопасность", "vps", "devops"]
+tags: ["docker", "linux", "security", "vps", "devops"]
 slug: "docker-ufw-port-closed-but-open"
 ---
 

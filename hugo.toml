@@ -28,3 +28,14 @@ title = "ifonin.ru"
 
 [permalinks]
   blog = "/blog/:slug/"
+
+[related]
+  includeNewer = true
+  threshold = 50
+  toLower = true
+  [[related.indices]]
+    name = "tags"
+    weight = 100
+  [[related.indices]]
+    name = "date"
+    weight = 10
