@@ -1,5 +1,15 @@
 [
   {
+    "slug": "10-bez-programmista-5-nelzya",
+    "title": "10 вещей, которые можно сделать без программиста (и 5, которые пока нельзя)",
+    "date": "2026-03-31",
+    "tags": [
+      "claude-code",
+      "вайб-кодинг",
+      "без-программиста"
+    ]
+  },
+  {
     "slug": "chrome-devtools-mcp-claude-code",
     "title": "Как подключить Chrome DevTools MCP к Claude Code: инструкция для разработчиков",
     "date": "2026-03-30",
