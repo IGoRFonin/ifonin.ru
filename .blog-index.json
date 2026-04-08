@@ -1,5 +1,18 @@
 [
   {
+    "slug": "ai-sales-trainer-free",
+    "title": "AI-тренажёр продаж за бесплатно: Parakeet + Claude + edge-tts",
+    "date": "2026-04-07",
+    "tags": [
+      "ai",
+      "sales",
+      "stt",
+      "tts",
+      "claude",
+      "pet-project"
+    ]
+  },
+  {
     "slug": "last30days-fork-reddit-proxy-pool",
     "title": "Форкнул last30days: заменил платный API на прямые запросы к Reddit через домашний пул прокси",
     "date": "2026-04-06",
