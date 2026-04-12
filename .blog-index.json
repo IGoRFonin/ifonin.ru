@@ -1,5 +1,16 @@
 [
   {
+    "slug": "token-hotspot-mode-visualization",
+    "title": "Hotspot Mode: как я нашел 10 миллионов токенов, которые исчезали в сессии",
+    "date": "2026-04-16",
+    "tags": [
+      "claude-code",
+      "tokens",
+      "dev-tools",
+      "optimization"
+    ]
+  },
+  {
     "slug": "ai-research-as-workflow",
     "title": "14 ресёрчей за неделю через один скилл",
     "date": "2026-04-13",
