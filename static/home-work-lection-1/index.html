@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Домашнее задание после лекции 1 | ifonin.ru</title>
+  <meta name="description" content="Пошаговая инструкция: ставим Claude Code с нуля на Windows или macOS за один вечер.">
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    :root {
+      --bg: #0A0A0F;
+      --bg-elev: #12121A;
+      --bg-elev-2: #1A1A24;
+      --border: #26262F;
+      --border-2: #35353F;
+      --fg: #F4F4F6;
+      --fg-muted: #A1A1AA;
+      --fg-dim: #71717A;
+      --accent: #A78BFA;
+      --accent-2: #8B5CF6;
+      --accent-glow: rgba(139,92,246,0.18);
+      --pink: #F472B6;
+      --cyan: #67E8F9;
+      --green: #4ADE80;
+      --warn: #FBBF24;
+      --ok-bg: rgba(74,222,128,0.1);
+      --warn-bg: rgba(251,191,36,0.1);
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 15.5px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    body::before {
+      content:''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background:
+        radial-gradient(ellipse at 20% 0%, rgba(139,92,246,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 100%, rgba(244,114,182,0.05) 0%, transparent 50%);
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--fg); text-decoration: underline; text-underline-offset: 3px; }
+    code, pre { font-family: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, Consolas, monospace; }
+    ::selection { background: var(--accent-glow); color: var(--fg); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+    /* Topbar */
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(10,10,15,0.75);
+      backdrop-filter: saturate(160%) blur(14px);
+      -webkit-backdrop-filter: saturate(160%) blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1.5rem;
+      display: flex; align-items: center; gap: 1rem;
+      height: 54px;
+    }
+    .topbar-home {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--fg);
+    }
+    .topbar-home:hover { color: var(--accent); text-decoration: none; }
+    .topbar-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 8px var(--green);
+    }
+    .topbar-progress-wrap {
+      margin-left: auto;
+      display: flex; align-items: center; gap: 0.75rem;
+      font-size: 12.5px;
+      color: var(--fg-muted);
+      font-variant-numeric: tabular-nums;
+    }
+    .topbar-progress-bar {
+      width: 180px; height: 4px;
+      background: var(--bg-elev-2);
+      border-radius: 999px;
+      overflow: hidden;
+      position: relative;
+    }
+    .topbar-progress-fill {
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, var(--accent-2) 0%, var(--pink) 100%);
+      width: 0%;
+      box-shadow: 0 0 12px var(--accent-glow);
+      transition: width 350ms ease;
+    }
+    .topbar-pct { color: var(--fg); font-weight: 600; min-width: 2.5rem; text-align: right; }
+
+    /* Hero */
+    .hero {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem 3rem;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.35rem 0.8rem;
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--fg-muted);
+      margin-bottom: 1.5rem;
+    }
+    .hero-tag-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+    }
+    .hero h1 {
+      font-size: clamp(2.25rem, 5vw, 3.75rem);
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+      font-weight: 700;
+      margin: 0 0 1.25rem;
+      background: linear-gradient(180deg, #fff 0%, #b8b8c8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-lead {
+      font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+      line-height: 1.55;
+      color: var(--fg-muted);
+      margin: 0;
+      max-width: 620px;
+    }
+    .hero-meta {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      margin-top: 1.75rem;
+    }
+    .hero-meta-item {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.45rem 0.85rem;
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--fg-muted);
+    }
+    .hero-meta-item strong { color: var(--fg); font-weight: 600; }
+
+    /* Main layout */
+    .main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 1.5rem 6rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Phase */
+    .phase {
+      display: flex; align-items: center; gap: 1rem;
+      margin: 3rem 0 1.5rem;
+      padding-left: 56px;
+    }
+    .phase-roman {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px;
+      background: linear-gradient(135deg, var(--accent-2) 0%, var(--pink) 100%);
+      color: #fff;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      box-shadow: 0 4px 20px var(--accent-glow);
+    }
+    .phase-text {
+      font-size: 11.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--fg-dim);
+    }
+    .phase h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+      margin: 0.15rem 0 0;
+      color: var(--fg);
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 56px;
+    }
+    .timeline::before {
+      content:''; position: absolute; left: 19px; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--border-2) 0%, var(--border) 100%);
+    }
+    .timeline-fill {
+      position: absolute; left: 19px; top: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent-2) 0%, var(--pink) 100%);
+      box-shadow: 0 0 12px var(--accent-glow);
+      height: 0;
+      transition: height 500ms ease;
+      pointer-events: none;
+    }
+
+    /* Step */
+    .step {
+      position: relative;
+      margin-bottom: 1.5rem;
+      scroll-margin-top: 70px;
+    }
+    .step-node {
+      position: absolute;
+      left: -56px; top: 2px;
+      width: 40px; height: 40px;
+      background: var(--bg-elev);
+      border: 2px solid var(--border-2);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700;
+      font-size: 13.5px;
+      color: var(--fg-muted);
+      font-variant-numeric: tabular-nums;
+      transition: all 200ms ease;
+      z-index: 2;
+    }
+    .step.done .step-node {
+      background: linear-gradient(135deg, var(--green) 0%, #22C55E 100%);
+      color: #06130A;
+      border-color: var(--green);
+      box-shadow: 0 0 16px rgba(74,222,128,0.35);
+    }
+    .step.done .step-node::before {
+      content: '✓'; font-size: 16px;
+    }
+    .step.done .step-node-num { display: none; }
+    .step-card {
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem 1.4rem;
+      transition: border-color 200ms, background 200ms;
+    }
+    .step-card:hover { border-color: var(--border-2); background: var(--bg-elev-2); }
+    .step.done .step-card { opacity: 0.7; }
+
+    .step-meta {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .step-tag {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      background: var(--accent-glow);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+    }
+    .step-tag.win { color: var(--cyan); background: rgba(103,232,249,0.1); }
+    .step-tag.mac { color: var(--fg); background: rgba(255,255,255,0.06); }
+
+    .step-check {
+      margin-left: auto;
+      appearance: none;
+      background: transparent;
+      border: 1px solid var(--border-2);
+      color: var(--fg-muted);
+      font: inherit;
+      font-size: 12.5px;
+      padding: 0.3rem 0.65rem;
+      border-radius: 6px;
+      cursor: pointer;
+      min-height: 32px;
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      transition: all 150ms ease;
+    }
+    .step-check::before { content: '○'; font-size: 14px; line-height: 1; }
+    .step-check:hover { color: var(--fg); border-color: var(--accent); background: var(--accent-glow); }
+    .step.done .step-check {
+      background: rgba(74,222,128,0.12);
+      border-color: var(--green);
+      color: var(--green);
+    }
+    .step.done .step-check::before { content: '✓'; }
+
+    .step h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+      margin: 0 0 0.5rem;
+      color: var(--fg);
+    }
+    .step p { margin: 0.5rem 0; color: var(--fg-muted); font-size: 14.5px; }
+    .step p strong { color: var(--fg); font-weight: 600; }
+    .step p em { color: var(--fg); font-style: normal; background: var(--accent-glow); padding: 0.05rem 0.3rem; border-radius: 3px; }
+
+    .step code {
+      font-size: 0.88em;
+      background: var(--bg-elev-2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.1rem 0.4rem;
+      color: var(--pink);
+    }
+
+    /* Code block */
+    .codeblock {
+      position: relative;
+      margin: 0.9rem 0;
+      background: #050507;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .codeblock::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 44px;
+      background: var(--bg-elev);
+      border-bottom: 1px solid var(--border);
+    }
+    .codeblock::after {
+      content: '●  ●  ●';
+      position: absolute; top: 14px; left: 12px;
+      color: var(--border-2);
+      font-size: 9px;
+      letter-spacing: 2px;
+    }
+    .codeblock pre {
+      margin: 0;
+      padding: 3.4rem 1.1rem 1.1rem;
+      color: #E6EDF3;
+      font-size: 13px;
+      line-height: 1.55;
+      overflow-x: auto;
+      position: relative;
+    }
+    .codeblock pre code {
+      background: transparent; border: none; padding: 0; color: inherit; font-size: inherit;
+    }
+    .codeblock pre code::before {
+      content: '$ '; color: var(--green);
+    }
+    .copy-btn {
+      position: absolute; top: 8px; right: 8px;
+      z-index: 2;
+      appearance: none;
+      background: transparent;
+      border: 1px solid var(--border-2);
+      color: var(--fg-muted);
+      font: inherit;
+      font-size: 11px;
+      padding: 0.3rem 0.6rem;
+      border-radius: 5px;
+      cursor: pointer;
+      min-height: 26px;
+      transition: all 150ms ease;
+    }
+    .copy-btn:hover { color: var(--fg); border-color: var(--accent); background: var(--accent-glow); }
+    .copy-btn.copied { background: var(--green); border-color: var(--green); color: #06130A; font-weight: 600; }
+
+    /* Hint / callout */
+    .hint {
+      margin-top: 0.85rem;
+      padding: 0.55rem 0.85rem;
+      background: var(--bg-elev-2);
+      border-left: 2px solid var(--fg-dim);
+      border-radius: 0 6px 6px 0;
+      font-size: 13.5px;
+      color: var(--fg-muted);
+    }
+    .callout {
+      margin: 0.9rem 0;
+      padding: 0.75rem 1rem;
+      background: var(--warn-bg);
+      border: 1px solid rgba(251,191,36,0.25);
+      border-left: 3px solid var(--warn);
+      border-radius: 0 8px 8px 0;
+      font-size: 14px;
+      color: var(--fg);
+    }
+    .callout-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--warn);
+      margin-bottom: 0.2rem;
+    }
+
+    /* OS picker */
+    .os-picker {
+      margin: 1.5rem 0 1.5rem;
+      margin-left: 56px;
+    }
+    .os-picker-label {
+      font-size: 12.5px;
+      color: var(--fg-muted);
+      margin-bottom: 0.75rem;
+    }
+    .os-tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    .os-tab {
+      appearance: none;
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.1rem 1.25rem;
+      font: inherit;
+      color: var(--fg);
+      cursor: pointer;
+      text-align: left;
+      display: flex; align-items: center; gap: 0.85rem;
+      min-height: 44px;
+      transition: all 200ms ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .os-tab::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 30% 50%, var(--accent-glow) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 250ms;
+    }
+    .os-tab:hover { border-color: var(--border-2); }
+    .os-tab:hover::before { opacity: 0.5; }
+    .os-tab.active {
+      border-color: var(--accent);
+      background: linear-gradient(135deg, var(--bg-elev) 0%, var(--bg-elev-2) 100%);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+    .os-tab.active::before { opacity: 1; }
+    .os-tab svg {
+      width: 22px; height: 22px;
+      flex-shrink: 0;
+      color: var(--fg-muted);
+      position: relative; z-index: 1;
+    }
+    .os-tab.active svg { color: var(--fg); }
+    .os-tab-text { position: relative; z-index: 1; }
+    .os-tab-title { font-size: 1rem; font-weight: 600; letter-spacing: -0.01em; }
+    .os-tab-sub { font-size: 12.5px; color: var(--fg-muted); margin-top: 2px; }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* Finish */
+    .finish {
+      margin: 3rem 0 0 56px;
+      padding: 2rem 1.75rem;
+      background: linear-gradient(135deg, rgba(139,92,246,0.1) 0%, rgba(244,114,182,0.08) 100%);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .finish::before {
+      content: ''; position: absolute; top: -30px; right: -30px;
+      width: 180px; height: 180px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    }
+    .finish-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      position: relative; z-index: 1;
+    }
+    .finish h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem;
+      color: var(--fg);
+      letter-spacing: -0.015em;
+      position: relative; z-index: 1;
+    }
+    .finish p {
+      margin: 0;
+      color: var(--fg-muted);
+      font-size: 14.5px;
+      position: relative; z-index: 1;
+    }
+
+    /* Mobile */
+    @media (max-width: 680px) {
+      .phase { padding-left: 40px; }
+      .timeline { padding-left: 40px; }
+      .timeline::before, .timeline-fill { left: 11px; }
+      .step-node {
+        left: -40px; width: 28px; height: 28px;
+        border-radius: 8px; font-size: 11px;
+      }
+      .step-card { padding: 1rem 1.1rem 1.1rem; }
+      .os-picker { margin-left: 40px; }
+      .os-tabs { grid-template-columns: 1fr; }
+      .finish { margin-left: 40px; padding: 1.5rem 1.25rem; }
+      .topbar-progress-bar { width: 100px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="topbar-home" href="/">
+      <span class="topbar-dot"></span>
+      ifonin.ru
+    </a>
+    <div class="topbar-progress-wrap" aria-label="Прогресс">
+      <span>Прогресс</span>
+      <div class="topbar-progress-bar"><div class="topbar-progress-fill" id="progressFill"></div></div>
+      <span class="topbar-pct" id="progressPct">0%</span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-tag">
+      <span class="hero-tag-dot"></span>
+      Домашнее задание · Лекция 1
+    </div>
+    <h1>Поставим Claude Code с нуля за один вечер</h1>
+    <p class="hero-lead">15 шагов, отдельные ветки для Windows и macOS. Прогресс сохраняется в браузере — можно прерваться и вернуться туда, где остановился.</p>
+    <div class="hero-meta">
+      <span class="hero-meta-item">⏱ <strong>30–60 мин</strong></span>
+      <span class="hero-meta-item">◆ <strong>15 шагов</strong></span>
+      <span class="hero-meta-item">💬 <a href="https://t.me/igorfoninchannel">Если что — пиши в телеграм</a></span>
+    </div>
+  </section>
+
+  <main class="main">
+    <div class="phase">
+      <div class="phase-roman">I</div>
+      <div>
+        <div class="phase-text">Часть первая</div>
+        <h2>Аккаунт и подписка</h2>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-fill" id="timelineFill"></div>
+
+      <article class="step" id="step-0" data-step="0">
+        <div class="step-node"><span class="step-node-num">00</span></div>
+        <div class="step-card">
+          <div class="step-meta">
+            <span class="step-tag">Шаг 00</span>
+            <button class="step-check" type="button" data-check="0">готово</button>
+          </div>
+          <h3>Поставь VPN</h3>
+          <p>Сайт <code>claude.ai</code> в России заблокирован. Без VPN не получится ни зарегистрироваться, ни скачать Claude Desktop, ни пройти первую авторизацию в Claude Code.</p>
+          <p>Подойдёт любой рабочий VPN — какой уже стоит, тот и используй. Если нет вообще ничего или хочется вместо VPN прокси — <a href="https://t.me/igorfoninchannel">напиши мне в телеграм</a>, подскажу.</p>
+          <div class="callout">
+            <div class="callout-label">Важно</div>
+            VPN нужен всегда, когда работаешь с Claude. Включай, прежде чем запускать claude в терминале.
+          </div>
+        </div>
+      </article>
+
+      <article class="step" id="step-1" data-step="1">
+        <div class="step-node"><span class="step-node-num">01</span></div>
+        <div class="step-card">
+          <div class="step-meta"><span class="step-tag">Шаг 01</span><button class="step-check" type="button" data-check="1">готово</button></div>
+          <h3>Зарегистрируйся на claude.ai</h3>
+          <p>Включай VPN. Открывай <a href="https://claude.ai">claude.ai</a>, жми <strong>Sign up</strong>, вбивай свой email. На почту прилетит код — вводи его.</p>
+          <p>На следующем экране попросят номер телефона. <strong>Вкладку не закрывай</strong> — номер сейчас купим.</p>
+          <p>Если что-то не получается — <a href="https://t.me/igorfoninchannel">пиши мне в телеграм</a>.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-2" data-step="2">
+        <div class="step-node"><span class="step-node-num">02</span></div>
+        <div class="step-card">
+          <div class="step-meta"><span class="step-tag">Шаг 02</span><button class="step-check" type="button" data-check="2">готово</button></div>
+          <h3>Возьми виртуальный номер на Grizzly SMS</h3>
+          <p>В новой вкладке открывай <a href="https://grizzlysms.com/ru/claude">grizzlysms.com/ru/claude</a>. Регистрируйся, закинь на баланс рублей 30–50 — обычно этого хватает.</p>
+          <p>Выбирай страну (я обычно беру Индонезию — дешевле и стабильно работает), жми <strong>«Получить»</strong>. Номер появится на вкладке «Полученные номера».</p>
+          <div class="hint">Если не получается — <a href="https://t.me/igorfoninchannel">пиши мне в телеграм</a>, разберёмся.</div>
+        </div>
+      </article>
+
+      <article class="step" id="step-3" data-step="3">
+        <div class="step-node"><span class="step-node-num">03</span></div>
+        <div class="step-card">
+          <div class="step-meta"><span class="step-tag">Шаг 03</span><button class="step-check" type="button" data-check="3">готово</button></div>
+          <h3>Подтверди аккаунт через номер</h3>
+          <p>Копируй номер из Grizzly SMS, вставляй его в форму на claude.ai, жми <strong>«Отправить SMS»</strong>.</p>
+          <p>Возвращайся на вкладку Grizzly SMS — в течение минуты в столбце «Код» появится 6 цифр. Вбивай их на claude.ai.</p>
+          <div class="hint">Если код не пришёл минут за 20 — деньги сами вернутся на баланс, купи другой номер. Застрял — <a href="https://t.me/igorfoninchannel">пиши в телеграм</a>.</div>
+        </div>
+      </article>
+
+      <article class="step" id="step-4" data-step="4">
+        <div class="step-node"><span class="step-node-num">04</span></div>
+        <div class="step-card">
+          <div class="step-meta"><span class="step-tag">Шаг 04</span><button class="step-check" type="button" data-check="4">готово</button></div>
+          <h3>Купи подписку Claude Pro</h3>
+          <p>Открывай <a href="https://plati.market/games/claude/1543/">plati.market</a>. Бери <strong>PRO (1 месяц)</strong> — для старта хватит. Платишь картой РФ.</p>
+          <p>После оплаты продавец пришлёт инструкцию — обычно это ссылка, по которой подписка привяжется к твоему email от claude.ai.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-5" data-step="5">
+        <div class="step-node"><span class="step-node-num">05</span></div>
+        <div class="step-card">
+          <div class="step-meta"><span class="step-tag">Шаг 05</span><button class="step-check" type="button" data-check="5">готово</button></div>
+          <h3>Проверь, что подписка активна</h3>
+          <p>Заходи на <a href="https://claude.ai">claude.ai</a> под VPN. В левом нижнем углу должно стоять <strong>Pro</strong> (а не Free).</p>
+          <p>Отправь любое тестовое сообщение: <em>«привет, ты работаешь?»</em>. Ответ пришёл — отлично, идём дальше.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-6" data-step="6">
+        <div class="step-node"><span class="step-node-num">06</span></div>
+        <div class="step-card">
+          <div class="step-meta"><span class="step-tag">Шаг 06</span><button class="step-check" type="button" data-check="6">готово</button></div>
+          <h3>Скачай Claude Desktop</h3>
+          <p>Под VPN открывай <a href="https://claude.ai/download">claude.ai/download</a>. Сайт сам поймёт, какая у тебя система, и даст нужный установщик.</p>
+          <p>Ставь, запускай, логинься под тем же аккаунтом. Проверь, что чат отвечает — значит всё ок.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="phase">
+      <div class="phase-roman">II</div>
+      <div>
+        <div class="phase-text">Часть вторая</div>
+        <h2>Терминал и Node.js</h2>
+      </div>
+    </div>
+
+    <div class="os-picker">
+      <div class="os-picker-label">Шаги 07–10 зависят от системы</div>
+      <div class="os-tabs" role="tablist">
+        <button class="os-tab active" data-tab="win" role="tab" aria-selected="true" type="button">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+          <div class="os-tab-text">
+            <div class="os-tab-title">Windows</div>
+            <div class="os-tab-sub">Git Bash + Node.js LTS</div>
+          </div>
+        </button>
+        <button class="os-tab" data-tab="mac" role="tab" aria-selected="false" type="button">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+          <div class="os-tab-text">
+            <div class="os-tab-title">macOS</div>
+            <div class="os-tab-sub">cmux + Node.js LTS</div>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <div class="tab-content active" data-content="win">
+      <div class="timeline">
+        <article class="step" id="step-7" data-step="7">
+          <div class="step-node"><span class="step-node-num">07</span></div>
+          <div class="step-card">
+            <div class="step-meta"><span class="step-tag win">Win · 07</span><button class="step-check" type="button" data-check="7">готово</button></div>
+            <h3>Скачай Git for Windows</h3>
+            <p>Открывай <a href="https://git-scm.com/download/win">git-scm.com/download/win</a>. Скачивание стартанёт само (файл <code>Git-…-64-bit.exe</code>).</p>
+            <p>Запускай установщик, на всех шагах жми <strong>Next</strong>. На экране <strong>«Choosing the default editor»</strong> выбери <strong>Notepad</strong> вместо Vim — так проще, если только начинаешь.</p>
+          </div>
+        </article>
+
+        <article class="step" id="step-8" data-step="8">
+          <div class="step-node"><span class="step-node-num">08</span></div>
+          <div class="step-card">
+            <div class="step-meta"><span class="step-tag win">Win · 08</span><button class="step-check" type="button" data-check="8">готово</button></div>
+            <h3>Запусти Git Bash и проверь, что работает</h3>
+            <p>Меню Пуск → <strong>Git Bash</strong>. Откроется чёрное окно с приглашением вида <code>username@DESKTOP MINGW64 ~ $</code>.</p>
+            <p>Вбивай команду и жми Enter:</p>
+            <div class="codeblock"><pre><code>pwd</code></pre><button class="copy-btn" type="button">Копировать</button></div>
+            <p>Должен вывестись путь к домашней папке (типа <code>/c/Users/Имя</code>) — значит терминал живой.</p>
+          </div>
+        </article>
+
+        <article class="step" id="step-9w" data-step="9">
+          <div class="step-node"><span class="step-node-num">09</span></div>
+          <div class="step-card">
+            <div class="step-meta"><span class="step-tag win">Win · 09</span><button class="step-check" type="button" data-check="9">готово</button></div>
+            <h3>Поставь Node.js</h3>
+            <p>Node.js нужен, чтобы работал сам Claude Code — он написан на JavaScript и запускается через Node. Без Node его просто нечем запускать. Ещё в комплекте идёт <code>npm</code> — через него мы и поставим Claude.</p>
+            <p>Открывай <a href="https://nodejs.org/en/download">nodejs.org/en/download</a>. Бери <strong>LTS</strong> и <strong>Windows Installer (.msi)</strong>, x64. Ставь.</p>
+            <p><strong>Важно:</strong> закрой Git Bash и открой заново — иначе терминал не увидит Node. Потом проверяй:</p>
+            <div class="codeblock"><pre><code>node --version
+npm --version</code></pre><button class="copy-btn" type="button">Копировать</button></div>
+            <p>Обе команды должны вывести номер версии. Если выводят — едем дальше.</p>
+          </div>
+        </article>
+
+        <article class="step" id="step-10w" data-step="10">
+          <div class="step-node"><span class="step-node-num">10</span></div>
+          <div class="step-card">
+            <div class="step-meta"><span class="step-tag win">Win · 10</span><button class="step-check" type="button" data-check="10">готово</button></div>
+            <h3>Поставь Claude Code</h3>
+            <p>В Git Bash вбивай:</p>
+            <div class="codeblock"><pre><code>npm install -g @anthropic-ai/claude-code</code></pre><button class="copy-btn" type="button">Копировать</button></div>
+            <p>Когда установка добежит до конца, проверь:</p>
+            <div class="codeblock"><pre><code>claude --version</code></pre><button class="copy-btn" type="button">Копировать</button></div>
+            <p>Вывелась версия — поздравляю, Claude Code у тебя на компе.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="tab-content" data-content="mac">
+      <div class="timeline">
+        <article class="step" id="step-7m" data-step="7">
+          <div class="step-node"><span class="step-node-num">07</span></div>
+          <div class="step-card">
+            <div class="step-meta"><span class="step-tag mac">Mac · 07</span><button class="step-check" type="button" data-check="7">готово</button></div>
+            <h3>Скачай cmux</h3>
+            <p>Открывай прямую ссылку на DMG: <a href="https://github.com/manaflow-ai/cmux/releases/latest/download/cmux-macos.dmg">cmux-macos.dmg</a>.</p>
+            <p>Двойной клик по DMG → перетаскивай cmux в Applications.</p>
+            <div class="hint">cmux — удобный терминал под AI-агентов. Можно обойтись и стандартным Terminal.app, но в cmux приятнее.</div>
+          </div>
+        </article>
+
+        <article class="step" id="step-8m" data-step="8">
+          <div class="step-node"><span class="step-node-num">08</span></div>
+          <div class="step-card">
+            <div class="step-meta"><span class="step-tag mac">Mac · 08</span><button class="step-check" type="button" data-check="8">готово</button></div>
+            <h3>Запусти cmux и проверь, что работает</h3>
+            <p>Открывай через Launchpad или Spotlight (⌘+Space → cmux). При первом запуске macOS спросит — жми <strong>Open</strong>.</p>
+            <div class="codeblock"><pre><code>pwd</code></pre><button class="copy-btn" type="button">Копировать</button></div>
+            <p>Путь типа <code>/Users/Имя</code> — значит работает.</p>
+          </div>
+        </article>
+
+        <article class="step" id="step-9m" data-step="9">
+          <div class="step-node"><span class="step-node-num">09</span></div>
+          <div class="step-card">
+            <div class="step-meta"><span class="step-tag mac">Mac · 09</span><button class="step-check" type="button" data-check="9">готово</button></div>
+            <h3>Поставь Node.js</h3>
+            <p>Node.js нужен, чтобы работал сам Claude Code — он написан на JavaScript и запускается через Node. Без Node его нечем запустить. Заодно появится <code>npm</code> — через него мы и установим Claude.</p>
+            <p>Открывай <a href="https://nodejs.org/en/download">nodejs.org/en/download</a>. Бери <strong>LTS</strong> и <strong>macOS Installer (.pkg)</strong>.</p>
+            <p>Запускай, везде <strong>Continue</strong> и <strong>Install</strong>, введи пароль от Mac. <strong>Закрой cmux и открой его заново</strong> — иначе не увидит Node. Потом проверяй:</p>
+            <div class="codeblock"><pre><code>node --version
+npm --version</code></pre><button class="copy-btn" type="button">Копировать</button></div>
+            <p>Обе команды должны вывести номер версии. Вывели — хорошо.</p>
+          </div>
+        </article>
+
+        <article class="step" id="step-10m" data-step="10">
+          <div class="step-node"><span class="step-node-num">10</span></div>
+          <div class="step-card">
+            <div class="step-meta"><span class="step-tag mac">Mac · 10</span><button class="step-check" type="button" data-check="10">готово</button></div>
+            <h3>Поставь Claude Code</h3>
+            <p>В cmux вбивай:</p>
+            <div class="codeblock"><pre><code>npm install -g @anthropic-ai/claude-code</code></pre><button class="copy-btn" type="button">Копировать</button></div>
+            <p>Когда установка дойдёт до конца, проверь:</p>
+            <div class="codeblock"><pre><code>claude --version</code></pre><button class="copy-btn" type="button">Копировать</button></div>
+            <p>Вывелась версия — готово, Claude Code у тебя на маке.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-roman">III</div>
+      <div>
+        <div class="phase-text">Часть третья</div>
+        <h2>Первый сайт через Claude Code</h2>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <article class="step" id="step-11" data-step="11">
+        <div class="step-node"><span class="step-node-num">11</span></div>
+        <div class="step-card">
+          <div class="step-meta"><span class="step-tag">Шаг 11</span><button class="step-check" type="button" data-check="11">готово</button></div>
+          <h3>Создай папку под первый проект</h3>
+          <p>В терминале вбивай:</p>
+          <div class="codeblock"><pre><code>mkdir my-first-landing
+cd my-first-landing</code></pre><button class="copy-btn" type="button">Копировать</button></div>
+          <p>Первая команда создала папку, вторая — зашла в неё. Все файлы, которые напишет Claude, лягут сюда.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-12" data-step="12">
+        <div class="step-node"><span class="step-node-num">12</span></div>
+        <div class="step-card">
+          <div class="step-meta"><span class="step-tag">Шаг 12</span><button class="step-check" type="button" data-check="12">готово</button></div>
+          <h3>Запусти Claude Code и авторизуйся</h3>
+          <p><strong>Включай VPN.</strong> Он нужен для авторизации и будет нужен дальше.</p>
+          <div class="codeblock"><pre><code>claude</code></pre><button class="copy-btn" type="button">Копировать</button></div>
+          <p>Откроется приглашение Claude. В нём вбивай:</p>
+          <div class="codeblock"><pre><code>/login</code></pre><button class="copy-btn" type="button">Копировать</button></div>
+          <p>Откроется браузер. Входи в свой аккаунт, разрешай доступ. Как увидел <em>«Successfully authenticated»</em> — возвращайся в терминал.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-13" data-step="13">
+        <div class="step-node"><span class="step-node-num">13</span></div>
+        <div class="step-card">
+          <div class="step-meta"><span class="step-tag">Шаг 13</span><button class="step-check" type="button" data-check="13">готово</button></div>
+          <h3>Альтернатива VPN — прокси (опционально)</h3>
+          <p>Если хочешь вместо VPN использовать прокси — <a href="https://t.me/igorfoninchannel">напиши мне в телеграм</a>, расскажу, как настроить.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-14" data-step="14">
+        <div class="step-node"><span class="step-node-num">14</span></div>
+        <div class="step-card">
+          <div class="step-meta"><span class="step-tag">Шаг 14</span><button class="step-check" type="button" data-check="14">готово</button></div>
+          <h3>Напиши первый промпт</h3>
+          <p>В запущенном <code>claude</code> вставляй и жми Enter:</p>
+          <div class="codeblock"><pre><code>создай лендинг по предоставлению услуг по разработке сайтов. Сделай в лучших подходах по маркетингу. В светлых тонах</code></pre><button class="copy-btn" type="button">Копировать</button></div>
+          <p>Claude либо задаст пару уточняющих вопросов, либо сразу пойдёт писать файлы. Когда спросит разрешение на создание файлов — соглашайся.</p>
+        </div>
+      </article>
+
+      <article class="step" id="step-15" data-step="15">
+        <div class="step-node"><span class="step-node-num">15</span></div>
+        <div class="step-card">
+          <div class="step-meta"><span class="step-tag">Шаг 15</span><button class="step-check" type="button" data-check="15">готово</button></div>
+          <h3>Открой готовую страницу в браузере</h3>
+          <p>Когда Claude закончит работать — в папке <code>my-first-landing</code> появится HTML-файл (обычно <code>index.html</code>).</p>
+          <p>Открывай Finder (на маке) или Проводник (на винде), иди в папку <code>my-first-landing</code>, двойной клик по <code>index.html</code> — страница откроется в браузере. Поздравляю, твой первый сайт готов.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="finish">
+      <div class="finish-tag">● Завершено</div>
+      <h3>Claude Code работает. Первый сайт готов.</h3>
+      <p>Если на каком-то шаге застрял или что-то не взлетело — <a href="https://t.me/igorfoninchannel">пиши мне в телеграм</a>, разберёмся вместе.</p>
+    </div>
+  </main>
+
+  <script>
+    (function() {
+      var TOTAL = 16;
+      var KEY_DONE = 'hw-lec1-v6-done';
+      var KEY_OS = 'hw-lec1-os';
+      var done = new Set();
+      try { var saved = JSON.parse(localStorage.getItem(KEY_DONE) || '[]'); saved.forEach(function(n){done.add(n);}); } catch(e) {}
+
+      var fill = document.getElementById('progressFill');
+      var pct = document.getElementById('progressPct');
+      var tlFills = document.querySelectorAll('.timeline-fill');
+
+      function update() {
+        var n = done.size;
+        var ratio = n / TOTAL;
+        fill.style.width = (ratio * 100) + '%';
+        pct.textContent = Math.round(ratio * 100) + '%';
+        document.querySelectorAll('.step').forEach(function(s) {
+          s.classList.toggle('done', done.has(Number(s.dataset.step)));
+        });
+        // timeline fill
+        tlFills.forEach(function(f) {
+          var tl = f.parentElement;
+          var steps = tl.querySelectorAll('.step');
+          if (!steps.length) return;
+          var doneCount = 0;
+          steps.forEach(function(s) { if (done.has(Number(s.dataset.step))) doneCount++; });
+          var h = (doneCount / steps.length) * 100;
+          f.style.height = h + '%';
+        });
+        try { localStorage.setItem(KEY_DONE, JSON.stringify(Array.from(done))); } catch(e) {}
+      }
+      document.querySelectorAll('[data-check]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var n = Number(btn.dataset.check);
+          if (done.has(n)) done.delete(n); else done.add(n);
+          update();
+        });
+      });
+      update();
+
+      // Copy
+      document.querySelectorAll('.copy-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var code = btn.previousElementSibling.querySelector('code').innerText;
+          navigator.clipboard.writeText(code).then(function() {
+            btn.textContent = '✓ скопировано';
+            btn.classList.add('copied');
+            setTimeout(function() { btn.textContent = 'Копировать'; btn.classList.remove('copied'); }, 1500);
+          });
+        });
+      });
+
+      // OS tabs
+      var tabs = document.querySelectorAll('.os-tab');
+      var contents = document.querySelectorAll('.tab-content');
+      function setOs(os) {
+        tabs.forEach(function(t) {
+          var a = t.dataset.tab === os;
+          t.classList.toggle('active', a);
+          t.setAttribute('aria-selected', a);
+        });
+        contents.forEach(function(c) { c.classList.toggle('active', c.dataset.content === os); });
+        try { localStorage.setItem(KEY_OS, os); } catch(e) {}
+        update();
+      }
+      tabs.forEach(function(t) { t.addEventListener('click', function() { setOs(t.dataset.tab); }); });
+      try { var savedOs = localStorage.getItem(KEY_OS); if (savedOs === 'mac' || savedOs === 'win') setOs(savedOs); } catch(e) {}
+    })();
+  </script>
+</body>
+</html>
