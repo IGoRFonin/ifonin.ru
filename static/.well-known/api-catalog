@@ -1,0 +1,26 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://ifonin.ru/",
+      "service-desc": [
+        {
+          "href": "https://ifonin.ru/index.xml",
+          "type": "application/rss+xml",
+          "title": "RSS-лента: все статьи блога в машиночитаемом виде"
+        },
+        {
+          "href": "https://ifonin.ru/sitemap.xml",
+          "type": "application/xml",
+          "title": "Карта сайта: полный список страниц"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://ifonin.ru/about/",
+          "type": "text/html",
+          "title": "О блоге и авторе"
+        }
+      ]
+    }
+  ]
+}
