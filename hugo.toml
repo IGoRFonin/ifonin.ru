@@ -22,9 +22,24 @@ title = "ifonin.ru"
   changefreq = "weekly"
   priority = 0.5
 
+# Markdown for Agents: каждая страница дополнительно отдаётся как index.md
+# (см. layouts/_default/{single,list}.md). nginx отдаёт .md по Accept: text/markdown.
+[mediaTypes]
+  [mediaTypes."text/markdown"]
+    suffixes = ["md"]
+
+[outputFormats]
+  [outputFormats.markdown]
+    mediaType = "text/markdown"
+    baseName = "index"
+    isPlainText = true
+    # .Permalink в .md-шаблоне должен указывать на каноническую HTML-страницу
+    permalinkable = false
+
 [outputs]
-  home = ["HTML", "RSS"]
-  section = ["HTML", "RSS"]
+  home = ["HTML", "RSS", "markdown"]
+  section = ["HTML", "RSS", "markdown"]
+  page = ["HTML", "markdown"]
 
 [permalinks]
   blog = "/blog/:slug/"
