@@ -1,5 +1,16 @@
 [
   {
+    "slug": "blog-decays-without-maintenance",
+    "title": "Блог гниёт без ухода",
+    "date": "2026-07-31",
+    "tags": [
+      "seo",
+      "google-search-console",
+      "blog",
+      "analytics"
+    ]
+  },
+  {
     "slug": "token-hotspot-mode-visualization",
     "title": "Hotspot Mode: как я нашел 10 миллионов токенов, которые исчезали в сессии",
     "date": "2026-04-16",
